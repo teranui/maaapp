@@ -5,7 +5,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { ToastController } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
+import { HttpModule } from '@angular/http';
 
+ //pages
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SplashPage } from "../pages/splash/splash";
@@ -13,6 +15,10 @@ import { AuthPage } from "../pages/auth/auth";
 import { CollaborateurPage } from "../pages/collaborateur/collaborateur";
 import { TraiteurPage } from "../pages/traiteur/traiteur";
 import { modalTraitMenuPage } from "../templates/modalTraitMenu/modalTraitMenu";
+
+
+//provider
+import { AuthService } from '../providers/auth-service/auth-service';
 
 
 @NgModule({
@@ -27,6 +33,7 @@ import { modalTraitMenuPage } from "../templates/modalTraitMenu/modalTraitMenu";
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -43,8 +50,8 @@ import { modalTraitMenuPage } from "../templates/modalTraitMenu/modalTraitMenu";
     StatusBar,
     SplashScreen,
     ToastController,
-    ModalController,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    AuthService,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
 export class AppModule {}
