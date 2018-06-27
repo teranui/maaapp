@@ -16,6 +16,9 @@ import { CollaborateurPage } from "../pages/collaborateur/collaborateur";
 import { TraiteurPage } from "../pages/traiteur/traiteur";
 import { modalTraitMenuPage } from "../templates/modalTraitMenu/modalTraitMenu";
 
+// Native Components
+
+import { NativeStorage } from '@ionic-native/native-storage';
 
 //provider
 import { AuthService } from '../providers/auth-service/auth-service';
@@ -51,6 +54,8 @@ import { AuthService } from '../providers/auth-service/auth-service';
     SplashScreen,
     ToastController,
     AuthService,
+    NativeStorage,
+    ModalController,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })

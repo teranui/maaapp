@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 @Injectable()
-export class oneClickApiService {
+export class groupeUnApiService {
 
     private baseUrl: string = 'http://groupe1.api/api/';
 
@@ -19,12 +19,15 @@ export class oneClickApiService {
 
     public addPlate(data) {
         return new Promise((resolve, reject) => {
-            this.http.post(this.baseUrl + '/users', JSON.stringify(data))
-                .subscribe(res => {
-                    resolve(res);
-                }, (err) => {
-                    reject(err);
-                });
+            let headers = new Headers();
+            headers.append('Authorization', 'Bearer'+ localStorage.getItem('token'));
+            headers.append('Accept', localStorage.getItem('token'));
+                this.http.post(this.baseUrl + '/users', JSON.stringify(data))
+                    .subscribe(res => {
+                        resolve(res);
+                    }, (err) => {
+                        reject(err);
+                    });
         });
     }
 

@@ -5,12 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
     //Root page
 import { SplashPage } from '../pages/splash/splash';
-// import { AuthPage } from '../pages/auth/auth';
-
-// import { SplashPage } from '../pages/splash/splash';
-import { AuthPage } from '../pages/auth/auth';
-import { CollaborateurPage } from '../pages/collaborateur/collaborateur';
-import { TraiteurPage } from '../pages/traiteur/traiteur';
 
 @Component({
   templateUrl: 'app.html'

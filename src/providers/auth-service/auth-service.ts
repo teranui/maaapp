@@ -31,7 +31,6 @@ export class AuthService {
     return new Promise((resolve, reject) => {
         let headers = new Headers();
         headers.append('X-Auth-Token', localStorage.getItem('token'));
-
         this.http.post(apiUrl+'logout', {}, {headers: headers})
           .subscribe(res => {
             localStorage.clear();

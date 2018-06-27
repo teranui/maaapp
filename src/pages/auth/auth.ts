@@ -6,6 +6,7 @@ import { AuthService } from '../../providers/auth-service/auth-service';
 //page
 import { CollaborateurPage } from './../collaborateur/collaborateur';
 import { TraiteurPage } from './../traiteur/traiteur';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 @Component({
   selector: 'page-auth',
@@ -14,10 +15,10 @@ import { TraiteurPage } from './../traiteur/traiteur';
 export class AuthPage {
 
   loading: any;
-  loginData = { email: 'heimana@gmail.com', password: 'test', userstype_id:'' };
+  loginData = { email: 'heimana@gmail.com', password: 'test', userstype_id: '' };
   data: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public authService: AuthService, public loadingCtrl: LoadingController, private toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public authService: AuthService, public loadingCtrl: LoadingController, private toastCtrl: ToastController, private nativeStorage: NativeStorage) {
   }
 
   doLogin() {
@@ -29,12 +30,12 @@ export class AuthPage {
         this.loading.dismiss();
         this.data = result;
         if (this.data.success.userstype_id == 1) {
-          localStorage.setItem('token', this.data.access_token);
+          localStorage.setItem('token', this.data.token);
           this.navCtrl.setRoot(TraiteurPage);
           console.log('result Traiteur', this.data)
         }
         if (this.data.success.userstype_id == 2) {
-          localStorage.setItem('token', this.data.access_token);
+          localStorage.setItem('token', this.data.token);
           this.navCtrl.setRoot(CollaborateurPage);
           console.log('result Traiteur', this.data)
         }
