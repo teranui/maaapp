@@ -11,7 +11,7 @@ import { SplashPage } from "../pages/splash/splash";
 import { AuthPage } from "../pages/auth/auth";
 import { CollaborateurPage } from "../pages/collaborateur/collaborateur";
 import { TraiteurPage } from "../pages/traiteur/traiteur";
-import { ModalCollaMenuPage } from "../templates/modalCollaMenu/modalCollaMenu";
+// import { ModalCollaMenuPage } from "../templates/modalCollaMenu/modalCollaMenu";
 import { ModalCollaRecapPage } from "../templates/modalCollaRecap/modalCollaRecap";
 
 
@@ -23,7 +23,7 @@ import { ModalCollaRecapPage } from "../templates/modalCollaRecap/modalCollaReca
     AuthPage,
     CollaborateurPage,
     TraiteurPage,
-    ModalCollaMenuPage,
+    // ModalCollaMenuPage,
     ModalCollaRecapPage
   ],
   imports: [
@@ -38,7 +38,7 @@ import { ModalCollaRecapPage } from "../templates/modalCollaRecap/modalCollaReca
     AuthPage,
     CollaborateurPage,
     TraiteurPage,
-    ModalCollaMenuPage,
+    // ModalCollaMenuPage,
     ModalCollaRecapPage
   ],
   providers: [

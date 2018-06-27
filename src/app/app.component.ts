@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 // import { SplashPage } from '../pages/splash/splash';
-import { AuthPage } from '../pages/auth/auth';
+// import { AuthPage } from '../pages/auth/auth';
 import { CollaborateurPage } from "../pages/collaborateur/collaborateur";
 
 @Component({
