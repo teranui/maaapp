@@ -11,28 +11,34 @@ import { HomePage } from '../home/home';
 export class AuthPage {
 
   loading: any;
-  loginData = { username:'', password:'' };
+  loginData = { username: 'manaarii@gmail.com', password: 'azerty' };
   data: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authService: AuthService, public loadingCtrl: LoadingController, private toastCtrl: ToastController) {
   }
 
   doLogin() {
+    console.log('doLogin this.loginData',this.loginData);
     this.showLoader();
-    this.authService.login(this.loginData).then((result) => {
-      // this.loading.dismiss();
-      this.data = result;
-      localStorage.setItem('token', this.data.access_token);
-      this.navCtrl.setRoot(HomePage);
-    }, (err) => {
-      this.loading.dismiss();
-      this.presentToast(err);
-    });
+    this.authService.login(this.loginData)
+
+      .then((result) => {
+        this.loading.dismiss();
+        this.data = result;
+        console.log('resultat');
+        localStorage.setItem('token', this.data.access_token);
+        this.navCtrl.setRoot(HomePage);
+      },
+
+        (err) => {
+          this.loading.dismiss();
+          this.presentToast(err);
+        });
   }
 
-  showLoader(){
+  showLoader() {
     this.loading = this.loadingCtrl.create({
-        content: 'Authenticafication en cours...'
+      content: 'Authenticafication en cours...'
     });
 
     this.loading.present();
