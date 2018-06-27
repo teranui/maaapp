@@ -1,12 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the CollaborateurPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { NavController, NavParams, Platform } from 'ionic-angular';
 
 @Component({
   selector: 'page-collaborateur',
@@ -14,7 +7,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class CollaborateurPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private platform:Platform) {
   }
 
   ionViewDidLoad() {

@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the TraiteurPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { NavController, NavParams, Platform } from 'ionic-angular';
+import { modalTraitMenuPage } from '../../templates/modalTraitMenu/modalTraitMenu';
 
 @Component({
   selector: 'page-traiteur',
@@ -14,7 +8,10 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class TraiteurPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private platform: Platform) {
+    platform.ready().then(() => {
+     
+    });
   }
 
   ionViewDidLoad() {
