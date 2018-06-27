@@ -13,30 +13,17 @@ export class AuthService {
     console.log('login credentials',credentials);
     return new Promise((resolve, reject) => {
       let headers = new Headers();    
-      headers.append('Accept', 'application/json');
       headers.append('Content-Type', 'application/json');
 
       console.log('login headers',headers);
       console.log('login credentials',credentials);
-        // this.http.post(apiUrl+'login', JSON.stringify(credentials))
-        // .map(res=>res.json())
-        //   .subscribe(res => {
-        //     resolve(res.json());
-        //   }, (err) => {
-        //     console.log('login err', err);
-        //     reject(err);
-        //   });
-
-        this.http.post(apiUrl+'login', JSON.stringify(credentials))
-          .map(res => res.json())
-          .subscribe(
-            (data) => {
-              console.log('Information du traiteur: ', data);
-            },
-            (err) => {
-              console.log('Erreur authentification', err);
-            }
-          )
+        this.http.post(apiUrl+'login', credentials)
+          .subscribe(res => {
+            resolve(res.json());
+          }, (err) => {
+            console.log('erreur authentification', err);
+            reject(err);
+          });
     });
   }
 

@@ -11,7 +11,7 @@ import { HomePage } from '../home/home';
 export class AuthPage {
 
   loading: any;
-  loginData = { username: 'manaarii@gmail.com', password: 'azerty' };
+  loginData = { email: 'heimana@gmail.com', password: 'test' };
   data: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authService: AuthService, public loadingCtrl: LoadingController, private toastCtrl: ToastController) {
