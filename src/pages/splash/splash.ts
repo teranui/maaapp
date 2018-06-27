@@ -17,14 +17,9 @@ export class SplashPage {
 
   presentLoading() {
     const loader = this.loadingCtrl.create({
-      content: "Please wait...",
-      duration: 3000
+      content: "chargement patientez...",
+      duration: 5000
     });
     loader.present();
   }
-
-  
-
-  
-
 }
