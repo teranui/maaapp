@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Platform, AlertController, NavParams } from 'ionic-angular';
+import { NavController, Platform, AlertController, NavParams,ViewController } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 
 
@@ -9,7 +9,13 @@ import { ModalController } from 'ionic-angular';
   })
   export class modalTraitMenuPage {
 
-    constructor(public navCtrl: NavController, private platform: Platform, public modalCtrl: ModalController){
+    constructor(public navCtrl: NavController, private platform: Platform, public modalCtrl: ModalController,  private view: ViewController) {
 
     }
+
+    closeModal() {
+        this.view.dismiss();
+      }
+
+      
   }

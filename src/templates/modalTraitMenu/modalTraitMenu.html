@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Plats</ion-title>
+    <ion-buttons>
+      <button ion-button icon-left (click)="closeModal()">
+        <ion-icon name="arrow-back"></ion-icon>
+        Retour
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="img/thumbnail-totoro.png">
+          </ion-thumbnail>
+          <h2>My Neighbor Totoro</h2>
+          <p>Hayao Miyazaki • 1988</p>
+          <button ion-button clear item-end>ajouter</button>
+        </ion-item>
+      </ion-list>
+      <button ion-button>
+            <ion-icon name="add">ajouter un plat</ion-icon>
+          </button>
+</ion-content>

@@ -12,9 +12,20 @@ import 'rxjs/add/operator/catch';
 export class oneClickApiService {
 
     private baseUrl: string = 'http://groupe1.api/api/';
-    
+
 
     constructor(private http: Http) {
+    }
+
+    public addPlate(data) {
+        return new Promise((resolve, reject) => {
+            this.http.post(this.baseUrl + '/users', JSON.stringify(data))
+                .subscribe(res => {
+                    resolve(res);
+                }, (err) => {
+                    reject(err);
+                });
+        });
     }
 
 }
