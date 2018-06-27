@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the SplashPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { LoadingController } from 'ionic-angular';
 
 @Component({
   selector: 'page-splash',
@@ -14,11 +9,22 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class SplashPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, private splashScreen: SplashScreen, public loadingCtrl: LoadingController) {}
   ionViewDidLoad() {
+    this.presentLoading();
     console.log('ionViewDidLoad SplashPage');
   }
+
+  presentLoading() {
+    const loader = this.loadingCtrl.create({
+      content: "Please wait...",
+      duration: 3000
+    });
+    loader.present();
+  }
+
+  
+
+  
 
 }

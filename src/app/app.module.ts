@@ -7,12 +7,20 @@ import { ToastController } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { SplashPage } from "../pages/splash/splash";
+import { AuthPage } from "../pages/auth/auth";
+import { CollaborateurPage } from "../pages/collaborateur/collaborateur";
+import { TraiteurPage } from "../pages/traiteur/traiteur";
 
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    SplashPage,
+    AuthPage,
+    CollaborateurPage,
+    TraiteurPage
   ],
   imports: [
     BrowserModule,
@@ -21,7 +29,11 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    SplashPage,
+    AuthPage,
+    CollaborateurPage,
+    TraiteurPage
   ],
   providers: [
     StatusBar,
