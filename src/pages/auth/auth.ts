@@ -20,7 +20,7 @@ export class AuthPage {
   doLogin() {
     this.showLoader();
     this.authService.login(this.loginData).then((result) => {
-      this.loading.dismiss();
+      // this.loading.dismiss();
       this.data = result;
       localStorage.setItem('token', this.data.access_token);
       this.navCtrl.setRoot(HomePage);
@@ -32,7 +32,7 @@ export class AuthPage {
 
   showLoader(){
     this.loading = this.loadingCtrl.create({
-        content: 'Authenticating...'
+        content: 'Authenticafication en cours...'
     });
 
     this.loading.present();
@@ -41,7 +41,7 @@ export class AuthPage {
   presentToast(msg) {
     let toast = this.toastCtrl.create({
       message: msg,
-      duration: 3000,
+      duration: 5000,
       position: 'bottom',
       dismissOnPageChange: true
     });

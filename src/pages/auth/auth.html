@@ -9,23 +9,22 @@
 <ion-content padding>
 
   <div class="divcenter">
-    <h2>Bienvenue dans Ma'a App</h2>
-  
+    <h2>Ma'a App</h2>
 
 
-  <form (submit)="doLogin()">
-    <ion-item>
-      <ion-label floating>Votre E-mail</ion-label>
-      <ion-input [(ngModel)]="loginData.username" name="username" type="text" ></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating>Votre mot de passe</ion-label>
-      <ion-input [(ngModel)]="loginData.password" name="password" type="password" ></ion-input>
-    </ion-item>
-    <button ion-button block type="submit">
-      Se connecter
-    </button>
-  </form>
-</div>
 
+    <form (submit)="doLogin()">
+      <ion-item>
+        <ion-label floating>Votre E-mail</ion-label>
+        <ion-input [(ngModel)]="loginData.username" name="username" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Votre mot de passe</ion-label>
+        <ion-input [(ngModel)]="loginData.password" name="password" type="password"></ion-input>
+      </ion-item>
+      <button ion-button block type="submit">
+        Se connecter
+      </button>
+    </form>
+  </div>
 </ion-content>
