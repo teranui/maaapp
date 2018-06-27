@@ -11,6 +11,8 @@ import { SplashPage } from "../pages/splash/splash";
 import { AuthPage } from "../pages/auth/auth";
 import { CollaborateurPage } from "../pages/collaborateur/collaborateur";
 import { TraiteurPage } from "../pages/traiteur/traiteur";
+import { ModalCollaMenuPage } from "../templates/modalCollaMenu/modalCollaMenu";
+import { ModalCollaRecapPage } from "../templates/modalCollaRecap/modalCollaRecap";
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { TraiteurPage } from "../pages/traiteur/traiteur";
     SplashPage,
     AuthPage,
     CollaborateurPage,
-    TraiteurPage
+    TraiteurPage,
+    ModalCollaMenuPage,
+    ModalCollaRecapPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ import { TraiteurPage } from "../pages/traiteur/traiteur";
     SplashPage,
     AuthPage,
     CollaborateurPage,
-    TraiteurPage
+    TraiteurPage,
+    ModalCollaMenuPage,
+    ModalCollaRecapPage
   ],
   providers: [
     StatusBar,
