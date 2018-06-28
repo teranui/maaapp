@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, Platform, ModalController } from 'ionic-angular';
-import { ModalCollaMenuPage } from '../../templates/modalCollaMenu/modalCollaMenu';
+// import { ModalCollaMenuPage } from '../../templates/modalCollaMenu/modalCollaMenu';
 
 @Component({
  selector: 'page-collaborateur',
@@ -16,11 +16,11 @@ export class CollaborateurPage {  constructor(public navCtrl: NavController, pub
  }  ionViewDidLoad() {
    console.log('ionViewDidLoad TraiteurPage');
 
- }  openModal() {
+//  }  openModal() {
 
-   const modal = this.modalCtrl.create(ModalCollaMenuPage, {});
+//    const modal = this.modalCtrl.create(ModalCollaMenuPage, {});
 
-   modal.present();
+//    modal.present();
 
  }
 
