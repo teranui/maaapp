@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Plats</ion-title>
+    <ion-buttons>
+      <button ion-button icon-left (click)="closeModal()">
+        <ion-icon name="arrow-back"></ion-icon>
+        Retour
+      </button>
+    </ion-buttons>
+    <button ion-button icon-right button-right (click)="openModal()">
+      <ion-icon name="add">Ajouter</ion-icon>
+    </button>
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content>
+
+  <div class="divcenter">
+
+    <ion-list *ngFor="let meal of meals" class="pad">
+      <ion-item-sliding>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="img/thumbnail-totoro.png">
+          </ion-thumbnail>
+          <h2>{{meal.name}}</h2>
+          <button ion-button clear item-end>ajouter</button>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="light">
+            <ion-icon name="text"></ion-icon>
+            Modifier
+          </button>
+          <button ion-button color="danger">
+            <ion-icon name="trash"></ion-icon>
+            Supprimé
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+</ion-content>
