@@ -5,19 +5,18 @@
 </ion-header>
 
 <ion-content>
-
   <div class="divcenter">
     <ion-row class="pad-bot">
-      <button ion-button full (click)="openModal()">Mardi</button>
+      <button ion-button full (click)="openModal(2)">Mardi</button>
     </ion-row>
     <ion-row class="pad-bot">
-      <button ion-button full (click)="openModal()">Mercredi</button>
+      <button ion-button full (click)="openModal(3)">Mercredi</button>
     </ion-row>
     <ion-row class="pad-bot">
-      <button ion-button full (click)="openModal()">Jeudi</button>
+      <button ion-button full (click)="openModal(4)">Jeudi</button>
     </ion-row>
     <ion-row class="pad-bot">
-      <button ion-button full (click)="openModal()">Vendredi</button>
+      <button ion-button full (click)="openModal(5)">Vendredi</button>
     </ion-row>
 
   </div>
@@ -29,7 +28,7 @@
       <button ion-button color="primary" navaPop>Se déconnecter</button>
     </ion-buttons>
     <ion-buttons right>
-      <button ion-button color="primary" (click)="doLogout()">Valider</button>
+      <button ion-button color="primary">Valider</button>
     </ion-buttons>
   </ion-navbar>
 </ion-footer>
