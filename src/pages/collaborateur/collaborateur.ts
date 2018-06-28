@@ -1,24 +1,27 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the CollaborateurPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { NavController, NavParams, Platform, ModalController } from 'ionic-angular';
+import { ModalCollaMenuPage } from '../../templates/modalCollaMenu/modalCollaMenu';
 
 @Component({
-  selector: 'page-collaborateur',
-  templateUrl: 'collaborateur.html',
+ selector: 'page-collaborateur',
+ templateUrl: 'collaborateur.html',
 })
-export class CollaborateurPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+export class CollaborateurPage {  constructor(public navCtrl: NavController, public navParams: NavParams, private platform: Platform, public modalCtrl: ModalController) {
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CollaborateurPage');
-  }
+   platform.ready().then(() => {
+
+   });
+
+ }  ionViewDidLoad() {
+   console.log('ionViewDidLoad TraiteurPage');
+
+ }  openModal() {
+
+   const modal = this.modalCtrl.create(ModalCollaMenuPage, {});
+
+   modal.present();
+
+ }
 
 }
