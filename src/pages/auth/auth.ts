@@ -15,7 +15,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
 export class AuthPage {
 
   loading: any;
-  loginData = { email: 'heimana@gmail.com', password: 'test' };
+  loginData = { email: '', password: '' };
   data: any;
   goToPage = [null, TraiteurPage, CollaborateurPage];
 
