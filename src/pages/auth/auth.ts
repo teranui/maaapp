@@ -15,7 +15,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
 export class AuthPage {
 
   loading: any;
-  loginData = { email: 'heimana@gmail.com', password: 'test', userstype_id: '' };
+  loginData = { email: 'heimana@gmail.com', password: 'test' };
   data: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authService: AuthService, public loadingCtrl: LoadingController, private toastCtrl: ToastController, private nativeStorage: NativeStorage) {
@@ -29,13 +29,13 @@ export class AuthPage {
       .then((result) => {
         this.loading.dismiss();
         this.data = result;
+        this.nativeStorage.setItem('user', this.data);
         if (this.data.success.userstype_id == 1) {
-          localStorage.setItem('token', this.data.token);
+          console.log('token', this.nativeStorage.getItem('token'));
           this.navCtrl.setRoot(TraiteurPage);
           console.log('result Traiteur', this.data)
         }
         if (this.data.success.userstype_id == 2) {
-          localStorage.setItem('token', this.data.token);
           this.navCtrl.setRoot(CollaborateurPage);
           console.log('result Traiteur', this.data)
         }

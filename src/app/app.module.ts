@@ -15,13 +15,16 @@ import { AuthPage } from "../pages/auth/auth";
 import { CollaborateurPage } from "../pages/collaborateur/collaborateur";
 import { TraiteurPage } from "../pages/traiteur/traiteur";
 import { modalTraitMenuPage } from "../templates/modalTraitMenu/modalTraitMenu";
+import { modalCreatePlatePage } from "../templates/modalCreatePlate/modalCreatePlate";
 
 // Native Components
 
 import { NativeStorage } from '@ionic-native/native-storage';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 //provider
 import { AuthService } from '../providers/auth-service/auth-service';
+import { groupeUnApiService } from '../services/groupeUnApi.service'
 
 
 @NgModule({
@@ -33,6 +36,7 @@ import { AuthService } from '../providers/auth-service/auth-service';
     CollaborateurPage,
     TraiteurPage,
     modalTraitMenuPage,
+    modalCreatePlatePage,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,7 @@ import { AuthService } from '../providers/auth-service/auth-service';
     CollaborateurPage,
     TraiteurPage,
     modalTraitMenuPage,
+    modalCreatePlatePage,
   ],
   providers: [
     StatusBar,
@@ -56,6 +61,8 @@ import { AuthService } from '../providers/auth-service/auth-service';
     AuthService,
     NativeStorage,
     ModalController,
+    groupeUnApiService,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })

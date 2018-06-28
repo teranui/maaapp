@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-let apiUrl = 'http://groupe1.api/api/';
+let apiUrl = 'http://groupe1.motjo.io/api/';
 
 @Injectable()
 export class AuthService {
@@ -14,7 +14,6 @@ export class AuthService {
     return new Promise((resolve, reject) => {
       let headers = new Headers();    
       headers.append('Content-Type', 'application/json');
-
       console.log('login headers',headers);
       console.log('login credentials',credentials);
         this.http.post(apiUrl+'login', credentials)
@@ -28,7 +27,7 @@ export class AuthService {
   }
 
   logout(){
-    return new Promise((resolve, reject) => {
+    return new Promise((reject) => {
         let headers = new Headers();
         headers.append('X-Auth-Token', localStorage.getItem('token'));
         this.http.post(apiUrl+'logout', {}, {headers: headers})
