@@ -57,10 +57,8 @@
       "cordova-plugin-splashscreen": {},
       "phonegap-plugin-push": {},
       "cordova-plugin-x-toast": {},
-<<<<<<< HEAD
       "cordova-sqlite-storage": {}
-    }
-=======
+    },
       "cordova-plugin-nativestorage": {},
       "cordova-plugin-whitelist": {},
       "cordova-plugin-device": {},
@@ -71,6 +69,5 @@
     "platforms": [
       "android"
     ]
->>>>>>> heimana1
   }
-}
+

@@ -14,10 +14,13 @@ import { SplashPage } from "../pages/splash/splash";
 import { AuthPage } from "../pages/auth/auth";
 import { CollaborateurPage } from "../pages/collaborateur/collaborateur";
 import { TraiteurPage } from "../pages/traiteur/traiteur";
-<<<<<<< HEAD
+import { MenuPage } from '../pages/menu/menu';
+import { AssisPage } from '../pages/assis/assis';
+
+
 // import { ModalCollaMenuPage } from "../templates/modalCollaMenu/modalCollaMenu";
-import { ModalCollaRecapPage } from "../templates/modalCollaRecap/modalCollaRecap";
-=======
+// import { ModalCollaRecapPage } from "../templates/modalCollaRecap/modalCollaRecap";
+
 import { modalTraitMenuPage } from "../templates/modalTraitMenu/modalTraitMenu";
 import { modalCreatePlatePage } from "../templates/modalCreatePlate/modalCreatePlate";
 
@@ -29,13 +32,9 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 
 //provider
 import { AuthService } from '../providers/auth-service/auth-service';
-<<<<<<< HEAD
-import { AssisPage } from '../pages/assis/assis';
-import { MenuPage } from '../pages/menu/menu';
-=======
 import { groupeUnApiService } from '../services/groupeUnApi.service'
->>>>>>> 5c27ba298c453e560c564dafe8aabb258b7592ad
->>>>>>> heimana1
+
+
 
 
 @NgModule({
@@ -46,18 +45,13 @@ import { groupeUnApiService } from '../services/groupeUnApi.service'
     AuthPage,
     CollaborateurPage,
     TraiteurPage,
-<<<<<<< HEAD
-    // ModalCollaMenuPage,
-    ModalCollaRecapPage
-=======
-<<<<<<< HEAD
     AssisPage,
-    MenuPage
-=======
+    MenuPage,
     modalTraitMenuPage,
     modalCreatePlatePage,
->>>>>>> 5c27ba298c453e560c564dafe8aabb258b7592ad
->>>>>>> heimana1
+    // ModalCollaMenuPage,
+    // ModalCollaRecapPage,
+
   ],
   imports: [
     BrowserModule,
@@ -72,18 +66,11 @@ import { groupeUnApiService } from '../services/groupeUnApi.service'
     AuthPage,
     CollaborateurPage,
     TraiteurPage,
-<<<<<<< HEAD
-    // ModalCollaMenuPage,
-    ModalCollaRecapPage
-=======
-<<<<<<< HEAD
-    AssisPage,
-    MenuPage
-=======
     modalTraitMenuPage,
-    modalCreatePlatePage,
->>>>>>> 5c27ba298c453e560c564dafe8aabb258b7592ad
->>>>>>> heimana1
+
+    // ModalCollaMenuPage,
+    // ModalCollaRecapPage
+    // modalCreatePlatePage,
   ],
   providers: [
     StatusBar,
