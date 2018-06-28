@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ToastController, Platform } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service/auth-service';
 // import { HomePage } from '../home/home';
 
@@ -17,59 +17,67 @@ export class AuthPage {
   loading: any;
   loginData = { email: 'heimana@gmail.com', password: 'test' };
   data: any;
+  goToPage = [null, TraiteurPage, CollaborateurPage];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public authService: AuthService, public loadingCtrl: LoadingController, private toastCtrl: ToastController, private nativeStorage: NativeStorage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public authService: AuthService, public loadingCtrl: LoadingController, private toastCtrl: ToastController, private nativeStorage: NativeStorage, private platform: Platform) {
   }
 
-  doLogin() {
-    console.log('doLogin this.loginData', this.loginData);
-    this.showLoader();
-    this.authService.login(this.loginData)
 
-      .then((result) => {
+  ionViewWillEnter() {
+    // this.nativeStorage.remove('user');
+    this.platform.ready().then(() => {
+      this.nativeStorage.getItem('user')
+        .then(
+          data => {
+            this.navCtrl.setRoot(this.goToPage[data.userstype_id]);
+          },
+          error => {
+            console.log('error nativeStorage', error)
+          }
+        );
+      })
+    }
+
+
+
+doLogin() {
+  console.log('doLogin this.loginData', this.loginData);
+  this.showLoader();
+  this.authService.login(this.loginData)
+
+    .then((result) => {
+      this.loading.dismiss();
+      this.data = result;
+      this.nativeStorage.setItem('user', this.data.success);
+      this.navCtrl.setRoot(this.goToPage[this.data.success.userstype_id]);
+    },
+
+      (err) => {
         this.loading.dismiss();
-        this.data = result;
-        this.nativeStorage.setItem('user', this.data);
-        if (this.data.success.userstype_id == 1) {
-          console.log('token', this.nativeStorage.getItem('token'));
-          this.navCtrl.setRoot(TraiteurPage);
-          console.log('result Traiteur', this.data)
-        }
-        if (this.data.success.userstype_id == 2) {
-          this.navCtrl.setRoot(CollaborateurPage);
-          console.log('result Traiteur', this.data)
-        }
-        // console.log('resultat');
-        // localStorage.setItem('token', this.data.access_token);
-        // this.navCtrl.setRoot(HomePage);
-      },
+        this.presentToast(err);
+      });
+}
 
-        (err) => {
-          this.loading.dismiss();
-          this.presentToast(err);
-        });
-  }
+showLoader() {
+  this.loading = this.loadingCtrl.create({
+    content: 'Authenticafication en cours...'
+  });
 
-  showLoader() {
-    this.loading = this.loadingCtrl.create({
-      content: 'Authenticafication en cours...'
-    });
+  this.loading.present();
+}
 
-    this.loading.present();
-  }
+presentToast(msg) {
+  let toast = this.toastCtrl.create({
+    message: msg,
+    duration: 5000,
+    position: 'bottom',
+    dismissOnPageChange: true
+  });
 
-  presentToast(msg) {
-    let toast = this.toastCtrl.create({
-      message: msg,
-      duration: 5000,
-      position: 'bottom',
-      dismissOnPageChange: true
-    });
+  toast.onDidDismiss(() => {
+    console.log('Dismissed toast');
+  });
 
-    toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
-    });
-
-    toast.present();
-  }
+  toast.present();
+}
 }

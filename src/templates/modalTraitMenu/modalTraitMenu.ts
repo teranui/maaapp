@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Platform, ViewController } from 'ionic-angular';
+import { NavController, Platform, ViewController, NavParams } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { modalCreatePlatePage } from '../modalCreatePlate/modalCreatePlate';
 
@@ -12,12 +12,24 @@ import { groupeUnApiMeals } from '../../pages/models/groupeUnApi-meals.model';
 })
 export class modalTraitMenuPage {
 
-    meals : string[];
+    meals : any;
 
-    constructor(public navCtrl: NavController, private platform: Platform, public modalCtrl: ModalController, private view: ViewController, private GUAS: groupeUnApiService, ) {
+    constructor(public navCtrl: NavController, private platform: Platform, public modalCtrl: ModalController, private view: ViewController, private GUAS: groupeUnApiService, private navParams: NavParams ) {
         
     }
 
+    ionViewWillEnter(){
+        this.GUAS.get('traiteur/myMeals')
+            .then((data) => {
+                this.meals = data.data
+                console.log('meals',this.meals);
+            })
+        console.log('')
+    }
+
+    // modifyPlate(){
+    //     this.GUAS.post('')
+    // }
 
     openModal() {
         const modal = this.modalCtrl.create(modalCreatePlatePage, {});
@@ -26,14 +38,6 @@ export class modalTraitMenuPage {
 
     closeModal() {
         this.view.dismiss();
-    }
-
-    public showMeal() {
-        this.GUAS.get('traiteur/myMeals')
-            .then((data) => {
-                console.log(data);
-            })
-        console.log('PLAT ENVOYE')
     }
 
 }

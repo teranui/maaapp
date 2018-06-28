@@ -18,6 +18,7 @@ export class groupeUnApiService {
     options: any;
 
     constructor(private http: Http, private nativeStorage: NativeStorage) {
+        this.setHeaders();
     }
 
     public get(url): any {
@@ -30,14 +31,15 @@ export class groupeUnApiService {
     }
 
     public post(url, data): any {
+        console.log('post launched')
         return this.http.post(this.baseUrl + url, data, this.options)
-        .map(res => res.json())
-        .subscribe(res => {
+        .toPromise()
+        .then(res => {
             console.log('envoie');
             console.log(res);
             // resolve(res.json());
             return res.json();
-        }, (err) => {
+        }).catch ((err) => {
             console.log('erreur add plate', err);
             // reject(err);
         });
@@ -59,30 +61,17 @@ export class groupeUnApiService {
             )
     }
 
-    public addPlateApi() {
+    // public addPlateApi() {
 
-        this.http.post('http://groupe1.api/api/meal/create', {'name': this.newMeal }, this.options)
-            .map(res => res.json())
-            .subscribe(res => {
-                console.log('envoie');
-                console.log(res);
-                // resolve(res.json());
-            }, (err) => {
-                console.log('erreur add plate', err);
-                // reject(err);
-            });
-    }
-
-    // public getMenuPlate(data) {
-    //     return new Promise((resolve, reject) => {
-
-    //         let headers = new Headers();
-    //         headers.append('Authorization', 'Bearer ' + localStorage.getItem('token'));
-    //         this.http.get(this.baseUrl + 'traiteur/myMeals', JSON.stringify(data))
-    //             .subscribe(res => {
-    //                 resolve(res);
-    //             }, (err) => {
-    //                 reject(err);
-    //             });
-    //     });
+    //     this.http.post('http://groupe1.api/api/meal/create', {'name': this.newMeal }, this.options)
+    //         .map(res => res.json())
+    //         .subscribe(res => {
+    //             console.log('envoie');
+    //             console.log(res);
+    //             // resolve(res.json());
+    //         }, (err) => {
+    //             console.log('erreur add plate', err);
+    //             // reject(err);
+    //         });
+    // }
 }
