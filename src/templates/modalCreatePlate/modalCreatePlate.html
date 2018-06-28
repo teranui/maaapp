@@ -1,0 +1,21 @@
+<ion-content padding>
+
+  <div class="divcenter">
+    <h2>Ajouter un plat</h2>
+
+
+
+    <form (submit)="createNewPlate()">
+      <ion-item>
+        <ion-label floating>Nom du plat</ion-label>
+        <ion-input [(ngModel)]="newMealName" name="Plat" type="text"></ion-input>
+      </ion-item>
+      <button ion-button block type="submit">
+        Valider
+      </button>
+    </form>
+    <button ion-button block (click)="addPhoto()">
+        Ajouter une Photo
+      </button>
+  </div>
+</ion-content>

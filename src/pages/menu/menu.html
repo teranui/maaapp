@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <ion-title>
+      Menus Traiteurs
+    </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="traiteur">
+      <ion-segment-button value="traiteur1">
+        Exemple Traiteur 1
+      </ion-segment-button>
+      <ion-segment-button value="traiteur2">
+        Exemple Traiteur 2
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content class="bg" padding="">
+
+  <div [ngSwitch]="traiteur">
+
+    <ion-list *ngSwitchCase="'traiteur1'">
+      <ion-card>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/img/thumbnail-puppy-1.jpg">
+          </ion-thumbnail>
+          <ion-label>Steak Frite</ion-label>
+          <ion-checkbox color="blue" checked="false"></ion-checkbox>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/img/thumbnail-puppy-1.jpg">
+          </ion-thumbnail>
+          <ion-label>Poulet Fafa</ion-label>
+          <ion-checkbox color="blue" checked="false"></ion-checkbox>
+        </ion-item>
+      </ion-card>
+    </ion-list>
+
+
+
+    <ion-list *ngSwitchCase="'traiteur2'">
+      <ion-card>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/img/thumbnail-puppy-1.jpg">
+          </ion-thumbnail>
+          <ion-label>Sashimi</ion-label>
+          <ion-checkbox color="blue" checked="false"></ion-checkbox>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/img/thumbnail-puppy-1.jpg">
+          </ion-thumbnail>
+          <ion-label>Chao men</ion-label>
+          <ion-checkbox color="blue" checked="false"></ion-checkbox>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/img/thumbnail-puppy-1.jpg">
+          </ion-thumbnail>
+          <ion-label>Poisson Cru</ion-label>
+          <ion-checkbox color="blue" checked="false"></ion-checkbox>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/img/thumbnail-puppy-1.jpg">
+          </ion-thumbnail>
+          <ion-label>Salade de riz</ion-label>
+          <ion-checkbox color="blue" checked="false" right></ion-checkbox>
+        </ion-item>
+      </ion-card>
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer no-border>
+    <ion-navbar>
+      <ion-buttons left>
+        <button ion-button color="primary" navaPop>Se déconnecter</button>
+      </ion-buttons>
+      <ion-buttons right>
+        <button ion-button color="primary">Valider</button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-footer>
