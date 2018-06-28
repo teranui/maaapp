@@ -15,7 +15,7 @@ import { AssisPage } from '../assis/assis';
 export class AuthPage {
 
   loading: any;
-  loginData = { email: 'assistante@gmail.com', password: 'azerty', userstype_id:'' };
+  loginData = { email: 'nicolas@gmail.com', password: 'azerty', userstype_id:'' };
   data: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authService: AuthService, public loadingCtrl: LoadingController, private toastCtrl: ToastController) {
