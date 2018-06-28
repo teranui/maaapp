@@ -1,18 +1,35 @@
-<!--
-  Generated template for the CollaborateurPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>collaborateur</ion-title>
+    <ion-title left>Menu Collaboarteur</ion-title>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content>
 
-<ion-content padding>
+  <div class="divcenter">
+    <ion-row class="pad-bot">
+      <button ion-button full (click)="openModal()">Mardi</button>
+    </ion-row>
+    <ion-row class="pad-bot">
+      <button ion-button full (click)="openModal()">Mercredi</button>
+    </ion-row>
+    <ion-row class="pad-bot">
+      <button ion-button full (click)="openModal()">Jeudi</button>
+    </ion-row>
+    <ion-row class="pad-bot">
+      <button ion-button full (click)="openModal()">Vendredi</button>
+    </ion-row>
 
+  </div>
 </ion-content>
+
+<ion-footer no-border>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button color="primary" navaPop>Se déconnecter</button>
+    </ion-buttons>
+    <ion-buttons right>
+      <button ion-button color="primary" (click)="doLogout()">Valider</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-footer>

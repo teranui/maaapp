@@ -6,6 +6,7 @@ import { AuthService } from '../../providers/auth-service/auth-service';
 //page
 import { CollaborateurPage } from './../collaborateur/collaborateur';
 import { TraiteurPage } from './../traiteur/traiteur';
+import { AssisPage } from '../assis/assis';
 
 @Component({
   selector: 'page-auth',
@@ -14,7 +15,7 @@ import { TraiteurPage } from './../traiteur/traiteur';
 export class AuthPage {
 
   loading: any;
-  loginData = { email: 'heimana@gmail.com', password: 'test', userstype_id:'' };
+  loginData = { email: 'assistante@gmail.com', password: 'azerty', userstype_id:'' };
   data: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authService: AuthService, public loadingCtrl: LoadingController, private toastCtrl: ToastController) {
@@ -36,6 +37,11 @@ export class AuthPage {
         if (this.data.success.userstype_id == 2) {
           localStorage.setItem('token', this.data.access_token);
           this.navCtrl.setRoot(CollaborateurPage);
+          console.log('result Traiteur', this.data)
+        }
+        if (this.data.success.userstype_id == 3) {
+          localStorage.setItem('token', this.data.access_token);
+          this.navCtrl.setRoot(AssisPage);
           console.log('result Traiteur', this.data)
         }
         // console.log('resultat');

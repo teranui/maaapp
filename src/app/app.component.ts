@@ -4,14 +4,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
     //Root page
-import { SplashPage } from '../pages/splash/splash';
-// import { AuthPage } from '../pages/auth/auth';
+
+// import { SplashPage } from '../pages/splash/splash';
+import { AuthPage } from '../pages/auth/auth';
+// import { CollaborateurPage } from "../pages/collaborateur/collaborateur";
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = SplashPage;
+  rootPage:any = AuthPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -22,4 +24,3 @@ export class MyApp {
     });
   }
 }
-

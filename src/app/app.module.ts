@@ -15,8 +15,10 @@ import { CollaborateurPage } from "../pages/collaborateur/collaborateur";
 import { TraiteurPage } from "../pages/traiteur/traiteur";
 
 
+
 //provider
 import { AuthService } from '../providers/auth-service/auth-service';
+import { AssisPage } from '../pages/assis/assis';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { AuthService } from '../providers/auth-service/auth-service';
     SplashPage,
     AuthPage,
     CollaborateurPage,
-    TraiteurPage
+    TraiteurPage,
+    AssisPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { AuthService } from '../providers/auth-service/auth-service';
     SplashPage,
     AuthPage,
     CollaborateurPage,
-    TraiteurPage
+    TraiteurPage,
+    AssisPage
   ],
   providers: [
     StatusBar,
